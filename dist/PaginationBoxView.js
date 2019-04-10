@@ -305,72 +305,39 @@ var PaginationBoxView = function (_Component) {
       var previousAriaDisabled = selected === 0 ? 'true' : 'false';
       var nextAriaDisabled = selected === pageCount - 1 ? 'true' : 'false';
 
-      return (
-        // <ul className={containerClassName}>
-        //   <li className={previousClasses}>
-        //     <a
-        //       onClick={this.handlePreviousPage}
-        //       className={previousLinkClassName}
-        //       href={this.hrefBuilder(selected - 1)}
-        //       tabIndex="0"
-        //       role="button"
-        //       onKeyPress={this.handlePreviousPage}
-        //       aria-disabled={previousAriaDisabled}
-        //     >
-        //       {previousLabel}
-        //     </a>
-        //   </li>
-
-        //   {this.pagination()}
-
-        //   <li className={nextClasses}>
-        //     <a
-        //       onClick={this.handleNextPage}
-        //       className={nextLinkClassName}
-        //       href={this.hrefBuilder(selected + 1)}
-        //       tabIndex="0"
-        //       role="button"
-        //       onKeyPress={this.handleNextPage}
-        //       aria-disabled={nextAriaDisabled}
-        //     >
-        //       {nextLabel}
-        //     </a>
-        //   </li>
-        // </ul>
+      return _react2.default.createElement(
+        'nav',
+        { 'aria-label': '...' },
         _react2.default.createElement(
-          'nav',
-          { ariaLabel: '...' },
-          _react2.default.createElement(
-            'a',
-            {
-              onClick: this.handlePreviousPage,
-              className: previousLinkClassName,
-              href: this.hrefBuilder(selected - 1),
-              tabIndex: '0',
-              role: 'button',
-              onKeyPress: this.handlePreviousPage,
-              'aria-disabled': previousAriaDisabled
-            },
-            previousLabel
-          ),
-          _react2.default.createElement(
-            'ul',
-            { className: containerClassName },
-            this.pagination()
-          ),
-          _react2.default.createElement(
-            'a',
-            {
-              onClick: this.handleNextPage,
-              className: nextLinkClassName,
-              href: this.hrefBuilder(selected + 1),
-              tabIndex: '0',
-              role: 'button',
-              onKeyPress: this.handleNextPage,
-              'aria-disabled': nextAriaDisabled
-            },
-            nextLabel
-          )
+          'a',
+          {
+            onClick: this.handlePreviousPage,
+            className: previousLinkClassName,
+            href: this.hrefBuilder(selected - 1),
+            tabIndex: '0',
+            role: 'button',
+            onKeyPress: this.handlePreviousPage,
+            'aria-disabled': previousAriaDisabled
+          },
+          previousLabel
+        ),
+        _react2.default.createElement(
+          'ul',
+          { className: containerClassName },
+          this.pagination()
+        ),
+        _react2.default.createElement(
+          'a',
+          {
+            onClick: this.handleNextPage,
+            className: nextLinkClassName,
+            href: this.hrefBuilder(selected + 1),
+            tabIndex: '0',
+            role: 'button',
+            onKeyPress: this.handleNextPage,
+            'aria-disabled': nextAriaDisabled
+          },
+          nextLabel
         )
       );
     }
